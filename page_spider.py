@@ -3,8 +3,8 @@ import argparse
 
 
 def main(database: str, url_list_file: str):
-	print("we are going to work with "+database) # cmd + d copies line
-	print("we are going to scan "+url_list_file)
+	print("we are going to work with " + database)  # cmd + d copies line
+	print("we are going to scan " + url_list_file)
 
 
 if __name__ == "__main__":
