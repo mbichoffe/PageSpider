@@ -1,4 +1,8 @@
+import re
+import string
 from urllib.request import urlopen
+
+from bs4 import BeautifulSoup
 
 
 def load_urls_from_file(file_path: str):
@@ -14,7 +18,7 @@ def load_urls_from_file(file_path: str):
 def load_page(url: str):
 	response = urlopen(url)
 	html = response.read.decode('utf-8')
-	return
+	return html
 
 
 def scrape_page(page_contents: str):
@@ -37,8 +41,8 @@ def scrape_page(page_contents: str):
 		clean = True
 
 		# no punctuation
-		for punc in string.punctuation:
-			if punc in word:
+		for punctuation_marks in string.punctuation:
+			if punctuation_marks in word:
 				clean = False
 
 			# no numbers
